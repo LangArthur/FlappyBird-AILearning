@@ -17,7 +17,7 @@ class Game():
         self.initGameObject()
 
     def initGameObject(self):
-        pass
+        self.gameObject.append(Ground(0, 550))
 
     def run(self):
         while self.isRunning:
@@ -26,7 +26,6 @@ class Game():
                 go.update()
                 go.draw(self.window)
             pygame.display.flip()
-            self.draw()
             self.manageEvent()
 
     def manageEvent(self):
