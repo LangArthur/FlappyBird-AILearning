@@ -6,6 +6,7 @@ from src.Ground import Ground
 
 SCREEN_COLOR = 0,0,0
 
+# Game object containing flappybird game
 class Game():
     def __init__(self, x, y):
         pygame.init()
@@ -16,11 +17,15 @@ class Game():
         self.initGameObject()
 
     def initGameObject(self):
-        self.gameObject.append(Ground(0, 0))
         pass
 
     def run(self):
         while self.isRunning:
+            self.window.fill(SCREEN_COLOR)
+            for go in self.gameObject:
+                go.update()
+                go.draw(self.window)
+            pygame.display.flip()
             self.draw()
             self.manageEvent()
 
@@ -28,9 +33,3 @@ class Game():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.isRunning = False
-
-    def draw(self):
-        self.window.fill(SCREEN_COLOR)
-        for go in self.gameObject:
-            go.draw(self.window)
-        pygame.display.flip()

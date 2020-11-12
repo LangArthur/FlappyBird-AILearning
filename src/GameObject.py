@@ -14,3 +14,7 @@ class GameObject():
     # param window: the window of the game
     def draw(self, window):
         pass
+
+    # update the gameObject
+    def update(self):
+        pass
