@@ -16,8 +16,7 @@ class Game():
         self.initGameObject()
 
     def initGameObject(self):
-        self.gameObject.append(Ground(0, 0))
-        pass
+        self.gameObject.append(Ground(0, 550))
 
     def run(self):
         while self.isRunning:
