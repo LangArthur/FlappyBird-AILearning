@@ -2,24 +2,35 @@
 
 import sys, pygame
 
+from src.Ground import Ground
+
 def main():
 
     pygame.init()
 
-    size = width, height = 320, 240
+    gameObjects = [Ground(1, 400, True)]
+
+    size = 320, 240
     black = 0, 0, 0
 
-    screen = pygame.display.set_mode(size)
+    window = pygame.display.set_mode(size)
 
-    ball = pygame.image.load("ressources/bird1.png")
-    ballrect = ball.get_rect()
 
-    while 1:
+    ground = Ground(...)
+
+
+    bird = pygame.image.load("ressources/bird1.png")
+    birdrect = bird.get_rect()
+
+    isRunning = True
+
+    while isRunning:
+
+
         for event in pygame.event.get():
-            if event.type == pygame.QUIT: sys.exit()
+            if event.type == pygame.QUIT:
+                isRunning = False
 
-        screen.fill(black)
-        screen.blit(ball, ballrect)
         pygame.display.flip()
     return 0
 
