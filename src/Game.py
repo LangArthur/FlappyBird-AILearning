@@ -3,6 +3,7 @@
 import pygame
 
 from src.Ground import Ground
+from src.Pipe import Pipe
 
 SCREEN_COLOR = 0,0,0
 
@@ -17,6 +18,7 @@ class Game():
         self.initGameObject()
 
     def initGameObject(self):
+        self.gameObject.append(Pipe(150, 300))
         self.gameObject.append(Ground(0, 550))
 
     def run(self):
